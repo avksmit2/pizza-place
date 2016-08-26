@@ -1,1 +1,44 @@
+body {
+  background-image: url("../img/background.jpg");
+  background-repeat: no-repeat;
+  font-size: 2em;
+}
 
+#storeName {
+  margin-top: 10%;
+  font-size: 6em;
+  font-family: Garamond;
+  color: #339933;
+}
+
+#orderForm .pizzaChoice {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  padding-left: 10%;
+}
+
+#selectSize, #selectToppings {
+  padding-bottom: 5%;
+}
+
+#priceSum #size {
+  cursor:pointer;
+  color: #0088cc;
+}
+
+#priceSum #size li:hover {
+  text-decoration: underline;
+}
+
+#price {
+  font-family: Garamond;
+  font-size: 4em;
+  color: #339933;
+}
+
+.share {
+  display: none;
+  color: red;
+  font-size: 2em;
+}

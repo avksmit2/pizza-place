@@ -22,42 +22,65 @@
     </div>
     <div class="container container-table">
       <form id="orderForm">
-        <div class="row" id="custInfo">
+        <div class="row">
           <div class="col-sm-4">
-            <div class="form-group panel">
-              <div class="panel-body">
-                <label for="custName">Please enter your name:</label>
-                <input id="custName" class="form-control" type="text" required>
-              </div>
+            <div class="form-group">
+              <label for="custName">Please enter your name:</label>
+              <input id="custName" class="form-control" type="text" required placeholder="Name">
+            </div>
+            <div class="form-group ">
+              <label for="phone">Please enter your phone number:</label>
+              <input id="phone" class="form-control" type="tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}" required placeholder="***-***-****">
             </div>
           </div>
-          <div class="col-sm-4">
-            <div class="form-group panel">
-              <div class="panel-body">
-                <label for="phone">Please enter your phone number:</label>
-                <input id="phone" class="form-control" type="text" required>
+          <div class="col-sm-7 pizzaChoice">
+            <div id="selectSize">
+              <label for="size">Please select a size:</label>
+              <select class="form-control" id="size">
+                <option selected>Small</option>
+                <option>Medium</option>
+                <option>Large</option>
+              </select>
+            </div>
+            <div class="row">
+              <label for="selectToppings">Please choose any of the following toppings:</label>
+              <div class="col-sm-5">
+                <div id="selectToppings">
+                  <input type="checkbox" class="toppings" id="pepperoni">Pepperoni<br>
+                  <input type="checkbox" class="toppings" id="hamburger">Hamburger<br>
+                  <input type="checkbox" class="toppings" id="sausage">Sausage<br>
+                  <input type="checkbox" class="toppings" id="olives">Olives<br>
+                  <input type="checkbox" class="toppings" id="onions">Onions<br>
+                  <input type="checkbox" class="toppings" id="jalapenos">Jalapenos<br>
+                  <input type="checkbox" class="toppings" id="pineapple">Pineapple<br>
+                </div>
+              </div>
+              <div class="col-sm-3">
+                <img src="img/toppings.jpg" alt="pic of toppings">
               </div>
             </div>
+            <button class="btn btn-info btn-lg" type="submit" id="order">Place Order</button>
           </div>
         </div>
-        <div id="selectSize">
-          <select class-"form-control" id="size">
-            <option selected>Small</option>
-            <option>Medium</option>
-            <option>Large</option>
-          </select>
-        </div>
-        <div id="selectToppings">
-            <input type="checkbox" class="toppings" id="pepperoni">Pepperoni<br>
-            <input type="checkbox" class="toppings"  id="hamburger">Hamburger<br>                     <input type="checkbox" class="toppings"  id="sausage">Sausage<br>            <input type="checkbox" class="toppings"  id="olives">Olives<br>            <input type="checkbox" class="toppings"  id="onions">Onions<br>            <input type="checkbox" class="toppings"  id="jalapenos">Jalapenos<br>
-            <input type="checkbox" class="toppings"  id="pineapple">Pineapple<br>
-        </div>
-        <button class="btn btn-info btn-lg" type="submit" id="Order">Place Order</button>
       </form>
-      <div id="priceSum">
-        <h3 id="size"></h3>
-        <ul id="toppings"></ul>
-        <h2 id="price"></h2>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-7" id="priceSum">
+          <div class="row">
+            <div class="col-sm-5">
+              <ol class="subHeader" id="size"></ol>
+            </div>
+            <div class="col-sm-3">
+              <ul id="toppings"></ul>
+            </div>
+          </div>
+          <h2 id="price" class="text-center"></h2>
+        </div>
+        <div class="col-sm-5 share">
+          <p>Remember to share!</p>
+          <img src="img/share.jpg" alt="pic of sharing">
+        </div>
       </div>
     </div>
   </body>
