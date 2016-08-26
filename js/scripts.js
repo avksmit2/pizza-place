@@ -3,10 +3,10 @@ function Customer(custName, phone) {
 this.custName = custName;
 this.phone = phone;
 }
-function Pizza(size) {
-this.toppings = getToppings();
+function Pizza(size, toppings) {
+this.toppings = [toppings];
 this.size = size;
-this.price = getPizzaPrice();
+this.price = 0;
 }
 function Store(custName) {
 this.custName = custName;
@@ -32,30 +32,38 @@ Pizza.prototype.getPizzaPrice = function() {
 $(document).ready(function() {
   var store;
   var num = num++
+  var pizza1;
 
-  var toppings = ["Pepperoni", "Hamburger", "Sausage", "Olives", "Onions", "Jalapenos", "Pineapple"];
   var getToppings = function() {
-    toppings.forEach(function(toppings) {
-      if ($("#" + topping + ".val()").checked) {
-        pizza1.toppings.push(topping);
+    var selectedToppings = []
+    var toppings = document.getElementsByClassName('toppings');
+    console.log(toppings[1].checked);
+    for (var i=0;i<toppings.length;i++) {
+      if (toppings[i].checked) {
+        selectedToppings.push(toppings[i].id);
+        // alert(toppings[i].id);
+        // pizza1.toppings.push(toppings[i].id);
+        console.log(selectedToppings);
       }
-    });
+    };
   }
 
   $("form#orderForm").submit(function(event) {
     var custName = $("#custName").val();
     var phone = $("#phone").val();
-    var size = $("#size").val();
-    if (!pizza1) {
-      newCustomer = new Customer(custName, phone);
-      store = new Store(custName);
-      pizza1 = new Pizza(size);
-    }
-    $("#priceSum #size").text("Size selected: " + store.size)
-    store.toppings.forEach(function(topping) {
-      $("#priceSum #toppings").append("<li>" + topping);
-    })
-    $("#priceSum #price").text("Total Price: " + store.price);
-    event.preventDefault();
+    var size = $("#selectSize #size").val();
+    var toppings = getToppings();
+
+    newCustomer = new Customer(custName, phone);
+    store = new Store(custName);
+    pizza1 = new Pizza(size, toppings);
+    console.log(this.toppings);
+
+    // $("#priceSum #size").text("Size selected: " + store.size)
+    // store.toppings.forEach(function(topping) {
+    //   $("#priceSum #toppings").append("<li>" + topping);
+    // })
+    // $("#priceSum #price").text("Total Price: " + store.price);
+    // event.preventDefault();
   });
 });
