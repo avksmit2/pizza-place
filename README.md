@@ -11,16 +11,13 @@ _Specifications_
 1. Output should be monetary with two decimals
   * input example: large Hawaiian
   * output example: $20.00
-2. Require user to choose size and toppings
-  * input example: ""
-  * output example: "please choose a size (or toppings)"
-3. Make phone number input in correct format
+2. Make phone number input in correct format
   * input example: 503-233-4099
   * output example: 503-233-4099
-4. Put toppings into an array
+3. Put toppings into an array
   * input example: "pepperoni, olives"
   * output example: [pepperoni, olives]
-5. Return price for user's pizza selection
+4. Return price for user's pizza selection
     * input example: large Hawaiian
     * output example: $20
 
@@ -38,7 +35,7 @@ CSS
 Bootstrap
 JQuery
 
-[Link to GitHub] (avksmit2.github.io/ping-pong)
+[Link to GitHub] (avksmit2.github.io/pizza-place)
 
 License
 MIT

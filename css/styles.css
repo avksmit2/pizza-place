@@ -22,15 +22,6 @@ body {
   padding-bottom: 5%;
 }
 
-#priceSum #size {
-  cursor:pointer;
-  color: #0088cc;
-}
-
-#priceSum #size li:hover {
-  text-decoration: underline;
-}
-
 #price {
   font-family: Garamond;
   font-size: 4em;

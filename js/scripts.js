@@ -49,7 +49,7 @@ $(document).ready(function() {
     pizza = new Pizza(size, getToppings());
 
     var price = pizza.getPizzaPrice();
-    $("#priceSum #price").text("Total Price: " + pizza.getPizzaPrice());
+    $("#priceSum #price").text("Total Price: $" + pizza.getPizzaPrice().toFixed(2));
     $(".share").show();
   });
 });
