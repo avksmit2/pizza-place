@@ -4,7 +4,7 @@ this.custName = custName;
 this.phone = phone;
 }
 function Pizza(size, toppings) {
-this.toppings = [toppings];
+this.toppings = toppings;
 this.size = size;
 this.price = 0;
 }
@@ -37,15 +37,12 @@ $(document).ready(function() {
   var getToppings = function() {
     var selectedToppings = []
     var toppings = document.getElementsByClassName('toppings');
-    console.log(toppings[1].checked);
     for (var i=0;i<toppings.length;i++) {
       if (toppings[i].checked) {
         selectedToppings.push(toppings[i].id);
-        // alert(toppings[i].id);
-        // pizza1.toppings.push(toppings[i].id);
-        console.log(selectedToppings);
       }
     };
+    return selectedToppings;
   }
 
   $("form#orderForm").submit(function(event) {
@@ -53,17 +50,18 @@ $(document).ready(function() {
     var phone = $("#phone").val();
     var size = $("#selectSize #size").val();
     var toppings = getToppings();
+    event.preventDefault();
 
     newCustomer = new Customer(custName, phone);
     store = new Store(custName);
-    pizza1 = new Pizza(size, toppings);
-    console.log(this.toppings);
+    pizza1 = new Pizza(size, getToppings());
 
-    // $("#priceSum #size").text("Size selected: " + store.size)
-    // store.toppings.forEach(function(topping) {
-    //   $("#priceSum #toppings").append("<li>" + topping);
-    // })
-    // $("#priceSum #price").text("Total Price: " + store.price);
-    // event.preventDefault();
+    $("#priceSum #size").text("Size selected: " + pizza1.size)
+    pizza1.toppings.forEach(function(topping) {
+      $("#priceSum #toppings").append("<li>" + topping + "</li");
+    })
+    var price = pizza1.getPizzaPrice();
+    console.log(price);
+    $("#priceSum #price").text("Total Price: " + pizza1.getPizzaPrice());
   });
 });
