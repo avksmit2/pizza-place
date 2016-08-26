@@ -5,11 +5,49 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <script src="js/jquery-3.1.0.js"></script>
+    <script src="js/bootstrap.js"></script>
     <script src="js/scripts.js"></script>
     <title>Heavenly Slice</title>
-
   </head>
   <body>
+    <div class="container container-table">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1 class="text-center" id="storeName">Heavenly Slice</h1>
+        </div>
+        <div class="col-sm-6 heavenlySlice">
+          <img src="img/heavenlySlice.gif" alt="Heavenly Slice pic">
+        </div>
+      </div>
+    </div>
+    <div class="container container-table">
+      <form id="orderForm">
+        <div class="row" id="custInfo">
+          <div class="col-sm-4">
+            <div class="form-group panel">
+              <div class="panel-body">
+                <label for="custName">Please enter your name:</label>
+                <input id="custName" class="form-control" type="text" required>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="form-group panel">
+              <div class="panel-body">
+                <label for="phone">Please enter your phone number:</label>
+                <input id="phone" class="form-control" type="text" required>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <button class="btn btn-info btn-lg" type="submit" id="Order">Place Order</button>
+      </form>
+      <div id="priceSum">
+        <h3 id="size"></h3>
+        <ul id="toppings"></ul>
+        <h2 id="price"></h2>
+      </div>
+    </div>
   </body>
 </html>

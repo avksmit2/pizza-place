@@ -8,18 +8,18 @@ _Description_
 An order form for a pizza place where the user can choose toppings and the size of the pizza, adjusting the pricing of the pizza. Uses constructors and prototypes for objects as well as conditional statements.
 
 _Specifications_
-1.
-  * input example:
-  * output example:
-2.
-  * input example:
-  * output example:
-3.
-  * input example:
-  * output example:
-4.
-  * input example:
-  * output example:
+1. Return price for user's pizza selection
+  * input example: large hawaiian
+  * output example: $20
+2. Require user to choose size and toppings
+  * input example: ""
+  * output example: "please choose a size (or toppings)"
+3. Output should be monitary with two decimals
+  * input example: large hawaiian
+  * output example: $20.00
+4. Make phone number input in correct format
+  * input example: 503-233-4099
+  * output example: 503-233-4099
 5. 
   * input example:
   * output example:
