@@ -3,15 +3,18 @@ body {
   background-repeat: no-repeat;
   font-size: 2em;
 }
+#heavenlySlice {
+  height: 20vh;
+}
 
 #storeName {
-  margin-top: 10%;
-  font-size: 6em;
+  margin-top: 5%;
+  font-size: 4em;
   font-family: Garamond;
   color: #339933;
 }
 
-.price {
+.pricing {
   font-weight: bolder;
 }
 
@@ -34,12 +37,21 @@ body {
 
 #price {
   font-family: Garamond;
-  font-size: 4em;
+  font-size: 3em;
   color: #339933;
 }
 
 .share {
   display: none;
+  margin-top: 5%
+}
+
+#remember {
   color: red;
-  font-size: 2em;
+  font-size: 1.5em;
+}
+
+#sharePic {
+  height: 25vh;
+  width: auto;
 }
